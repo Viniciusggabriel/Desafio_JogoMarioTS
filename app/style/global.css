@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Mario";
+  src: url(../src/SuperMario256.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.dark_mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game_container {
+  border: 6px solid #fff;
+  background-color: rgb(147, 180, 215);
+  width: 600px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes pip_animation {
+  from {
+    right: 0;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  animation: pip_animation 1s linear infinite;
+}
+
+@keyframes mario_jump {
+  0% {
+    bottom: 0;
+  }
+  10% {
+    bottom: 100px;
+  }
+  30% {
+    bottom: 150px;
+  }
+  50% {
+    bottom: 200px;
+  }
+  70% {
+    bottom: 150px;
+  }
+  90% {
+    bottom: 100px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.mario {
+  width: 130px;
+  position: absolute;
+  bottom: 0;
+}
+
+.jump {
+  animation: mario_jump 500ms ease-in-out;
+}
+
+@keyframes nuvem_animation {
+  from {
+    right: -550px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+.nuvem {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  animation: nuvem_animation 3s linear infinite;
+}
+
+.reload {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Mario", sans-serif;
+  font-size: larger;
+}
+
+.button_reload {
+  background-color: #fff;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: larger;
+  font-family: "Mario", sans-serif;
+}
